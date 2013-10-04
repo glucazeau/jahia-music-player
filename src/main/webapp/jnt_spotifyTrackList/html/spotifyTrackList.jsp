@@ -4,23 +4,17 @@
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<jcr:nodeProperty node="${currentNode}" name="uri" var="uri"/>
-<jcr:nodeProperty node="${currentNode}" name="view" var="view"/>
-<jcr:nodeProperty node="${currentNode}" name="theme" var="theme"/>
-<jcr:nodeProperty node="${currentNode}" name="width" var="width"/>
-<jcr:nodeProperty node="${currentNode}" name="height" var="height"/>
+<jcr:nodeProperty node="${currentNode}" name="title" var="title"/>
+<jcr:nodeProperty node="${currentNode.parent}" name="width" var="width"/>
+<jcr:nodeProperty node="${currentNode.parent}" name="height" var="height"/>
+<jcr:nodeProperty node="${currentNode.parent}" name="view" var="view"/>
+<jcr:nodeProperty node="${currentNode.parent}" name="theme" var="theme"/>
 
-<c:if test="${empty width.string}">
-    <c:set var="width" value="300"/>
-</c:if>
-<c:if test="${empty height.string}">
-    <c:set var="height" value="380"/>
-</c:if>
+<template:addCacheDependency node="${currentNode.parent}" />
 
-<c:if test="${not empty uri.string}">
-    <iframe src="https://embed.spotify.com/?uri=${currentNode.properties.uri.string}&theme=${theme.string}&view=${view.string}" width="${height.string}" height="${width.string}" frameborder="0" allowtransparency="true"></iframe>
-</c:if>
-<c:if test="${renderContext.editMode}">
-	<template:module path="trackList"/>
-	<template:module path="playList"/>    
+<c:forEach items="${currentNode.properties.track}" var="track" varStatus="stat">
+	<c:set var="tracks" value="${track.string} ${stat.last ? '' : ','}" />
+</c:forEach>
+<c:if test="${not empty tracks}">
+<iframe src="https://embed.spotify.com/?uri=spotify:trackset:${title}:${tracks}&theme=${theme.string}&iew=${view.string}" width="${height.string}" height="${width.string}" frameborder="0" allowtransparency="true"></iframe>
 </c:if>
