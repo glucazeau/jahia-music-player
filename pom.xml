@@ -50,7 +50,7 @@
     </parent>
     <groupId>org.jahia.modules</groupId>
     <artifactId>musicplayer</artifactId>
-    <name>Jahia Music player</name>
+    <name>Jahia Music Player</name>
     <version>1.0-SNAPSHOT</version>    
     <packaging>war</packaging>
     <description>This module integrates music web players to your Jahia pages</description>
