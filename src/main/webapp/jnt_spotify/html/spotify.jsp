@@ -13,6 +13,7 @@
 </c:if>
 
 <c:if test="${renderContext.editMode}">
+	Spotify player: <br />
 	<c:if test="${empty trackList && empty playList}">
 		<template:module path="trackList"/>
 		<template:module path="playList"/>    

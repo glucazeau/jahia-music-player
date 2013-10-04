@@ -21,5 +21,5 @@
 </c:if>
 
 <c:if test="${not empty playlist.string}">
-    <iframe src="https://embed.spotify.com/?uri=spotify:user:${user.string}:playlist:${playlist.string}" width="${height.string}" height="${width.string}" frameborder="0" allowtransparency="true"></iframe>
+    <iframe src="https://embed.spotify.com/?uri=spotify:user:${user.string}:playlist:${playlist.string}&theme=${theme.string}&iew=${view.string}" width="${height.string}" height="${width.string}" frameborder="0" allowtransparency="true"></iframe>
 </c:if>

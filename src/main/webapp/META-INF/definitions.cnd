@@ -13,5 +13,5 @@
 + playList (jnt:spotifyPlayList)
 - theme (string,choicelist[resourceBundle]) = black indexed=no < black, white
 - view (string,choicelist[resourceBundle]) = list indexed=no < list, coverart
-- height (string)
-- width (string)
+- height (string) = '380'
+- width (string) = '300'
