@@ -5,7 +5,7 @@
 - playlist (string) mandatory
 
 [jnt:spotifyTrackList]
-- title (string)
+- title (string) mandatory
 - track (string) multiple
 
 [jnt:spotify] > jnt:content, jmix:multimediaContent
