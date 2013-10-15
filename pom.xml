@@ -51,7 +51,7 @@
     <groupId>org.jahia.modules</groupId>
     <artifactId>musicplayer</artifactId>
     <name>Jahia Music Player</name>
-    <version>1.0-SNAPSHOT</version>    
+    <version>1.0</version>    
     <packaging>war</packaging>
     <description>This module integrates music web players to your Jahia pages</description>
     <repositories>
