@@ -142,6 +142,7 @@
                 <configuration>
                     <nexusUrl>https://devtools.jahia.com/nexus/</nexusUrl>
                     <serverId>staging-repo</serverId>
+                    <stagingProfileId>6476c85c299551</stagingProfileId>
                 </configuration>
             </plugin>
             
