@@ -55,9 +55,9 @@
     <packaging>war</packaging>
     <description>This module integrates music web players to your Jahia pages</description>
     <scm>
-        <connection>scm:git:git@github.com:Jahia/jahia-music-player.git</connection>
-        <url>scm:git:git@github.com:Jahia/jahia-music-player.git</url>
-        <developerConnection>scm:git:git@github.com:Jahia/jahia-music-player.git</developerConnection>
+        <connection>scm:git:git@github.com:glucazeau/jahia-music-player.git</connection>
+        <url>scm:git:git@github.com:glucazeau/jahia-music-player.git</url>
+        <developerConnection>scm:git:git@github.com:glucazeau/jahia-music-player.git</developerConnection>
     </scm>
     <repositories>
         <repository>
