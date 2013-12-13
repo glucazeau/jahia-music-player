@@ -51,9 +51,14 @@
     <groupId>org.jahia.modules</groupId>
     <artifactId>musicplayer</artifactId>
     <name>Jahia Music Player</name>
-    <version>1.0</version>    
+    <version>1.1-SNAPSHOT</version>    
     <packaging>war</packaging>
     <description>This module integrates music web players to your Jahia pages</description>
+    <scm>
+        <connection>scm:git:git@github.com:Jahia/jahia-music-player.git</connection>
+        <url>scm:git:git@github.com:Jahia/jahia-music-player.git</url>
+        <developerConnection>scm:git:git@github.com:Jahia/jahia-music-player.git</developerConnection>
+    </scm>
     <repositories>
         <repository>
             <id>jahiaRepository</id>
@@ -68,6 +73,19 @@
             <url>http://maven.jahia.org/maven2</url>
         </pluginRepository>
     </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>jahia-enterprise-releases</id>
+            <url>https://devtools.jahia.com/nexus/content/repositories/jahia-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>jahia-enterprise-snapshots</id>
+            <url>https://devtools.jahia.com/nexus/content/repositories/jahia-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+
     <build>
         <plugins>
             <plugin>
@@ -116,6 +134,17 @@
                         </manifestEntries>
                     </archive>
                     <archiveClasses>true</archiveClasses>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.5.1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <nexusUrl>https://devtools.jahia.com/nexus/</nexusUrl>
+                    <serverId>staging-repo</serverId>
                 </configuration>
             </plugin>
         </plugins>
